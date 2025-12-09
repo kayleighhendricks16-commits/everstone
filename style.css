@@ -228,7 +228,7 @@ section {
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
 }
 
-/* HERO SLIDER - REDUCED HEIGHT & NO GAPS - IMPROVED SPACING */
+/* HERO SLIDER - REDUCED HEIGHT & NO GAPS - FIXED MOBILE SPACING */
 .hero-slider {
     position: relative;
     height: 75vh; /* Reduced from 100vh */
@@ -1173,7 +1173,7 @@ section {
     color: #2563EB;
 }
 
-/* WHATSAPP BUTTON - FIXED POSITIONING - MOBILE ICON ONLY */
+/* WHATSAPP BUTTON - BIGGER FOR DESKTOP, ICON ONLY FOR MOBILE */
 .whatsapp-button {
     position: fixed;
     bottom: 25px;
@@ -1181,22 +1181,23 @@ section {
     background: #25D366;
     color: white;
     text-decoration: none;
-    padding: 14px 22px;
+    padding: 18px 28px; /* Increased padding for bigger button */
     border-radius: 50px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px; /* Increased gap */
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
     transition: all 0.3s ease;
     z-index: 9999; /* Highest z-index */
     font-weight: 600;
-    font-size: 15px;
+    font-size: 17px; /* Increased font size */
     white-space: nowrap;
     cursor: pointer;
     pointer-events: auto;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    height: 64px; /* Fixed height for consistency */
 }
 
 .whatsapp-button:hover {
@@ -1206,11 +1207,12 @@ section {
 }
 
 .whatsapp-button i {
-    font-size: 22px;
+    font-size: 26px; /* Increased icon size */
 }
 
 .whatsapp-text {
-    font-size: 14px;
+    font-size: 16px; /* Increased text size */
+    font-weight: 600;
 }
 
 /* Popup Modal Styles */
@@ -1460,11 +1462,11 @@ section {
         height: 70px !important;
     }
     
-    /* FIXED: Hero slider mobile - IMPROVED SPACING */
+    /* FIXED: Hero slider mobile - PROPER SPACING */
     .hero-slider {
         margin-top: 70px !important;
-        height: 65vh !important;
-        min-height: 450px !important;
+        height: 85vh !important;
+        min-height: 500px !important;
         padding: 0 !important;
     }
     
@@ -1518,38 +1520,36 @@ section {
         z-index: 2 !important;
     }
     
-    /* FIXED: WhatsApp button mobile - SHOW ICON ONLY */
+    /* FIXED: WhatsApp button mobile - ICON ONLY (SMALLER) */
     .whatsapp-button {
         bottom: 20px !important;
         right: 20px !important;
-        padding: 15px !important; /* Equal padding for circle */
-        width: 60px !important; /* Fixed width */
-        height: 60px !important; /* Fixed height */
-        font-size: 14px !important;
-        z-index: 9999 !important;
+        padding: 15px !important;
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50% !important;
         display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        justify-content: center !important;
         align-items: center !important;
-        border-radius: 50% !important; /* Perfect circle */
+        justify-content: center !important;
+        z-index: 9999 !important;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
     }
     
     .whatsapp-button i {
         font-size: 28px !important;
-        margin: 0 !important; /* Remove any margins */
+        margin: 0 !important;
     }
     
     .whatsapp-text {
-        display: none !important; /* Hide text on mobile */
+        display: none !important;
     }
     
-    /* IMPROVED HERO SLIDER SPACING FOR MOBILE */
+    /* FIXED: IMPROVED HERO SLIDER SPACING FOR MOBILE */
     .slide-content {
-        padding: 20px !important;
-        padding-bottom: 80px !important; /* Added more bottom padding */
-        justify-content: center !important;
-        gap: 20px !important; /* Better spacing between elements */
+        padding: 30px 20px 120px !important; /* More bottom padding for dots */
+        justify-content: flex-start !important; /* Align content to top */
+        padding-top: 40px !important;
+        gap: 15px !important;
     }
     
     .slide-badge {
@@ -1560,26 +1560,17 @@ section {
     
     .slide-content h1 {
         font-size: 28px !important;
-        padding: 0 10px !important;
+        padding: 0 !important;
         line-height: 1.2 !important;
         margin-bottom: 15px !important;
+        margin-top: 10px !important;
     }
     
     .slide-content p {
         font-size: 16px !important;
-        padding: 0 10px !important;
+        padding: 0 !important;
         margin-bottom: 25px !important;
-    }
-    
-    /* IMPROVED SLIDER DOTS POSITIONING */
-    .slider-dots {
-        bottom: 40px !important; /* Moved dots higher */
-        gap: 12px !important; /* Better spacing between dots */
-    }
-    
-    .dot {
-        width: 10px !important;
-        height: 10px !important;
+        line-height: 1.5 !important;
     }
     
     .slide-buttons {
@@ -1587,6 +1578,18 @@ section {
         align-items: center !important;
         gap: 15px !important;
         margin-top: 10px !important;
+        margin-bottom: 30px !important; /* Space before dots */
+    }
+    
+    /* FIXED: SLIDER DOTS POSITIONING - PROPER SPACING */
+    .slider-dots {
+        bottom: 60px !important; /* Moved dots down for proper spacing */
+        gap: 12px !important;
+    }
+    
+    .dot {
+        width: 10px !important;
+        height: 10px !important;
     }
     
     .slider-control {
@@ -1696,12 +1699,15 @@ section {
         gap: 25px !important;
     }
     
-    /* FIXED: "View All Services" button centering */
+    /* FIXED: "View All Services" button centering - PROPER FIX */
     .services-section .text-center {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin: 30px auto 0 !important;
     }
     
     .services-section .btn {
@@ -1709,6 +1715,26 @@ section {
         width: auto !important;
         min-width: 250px !important;
         justify-content: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* FIXED: "View All Projects" button centering - NEW FIX */
+    .featured-projects .text-center {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin: 30px auto 0 !important;
+    }
+    
+    .featured-projects .btn {
+        display: inline-flex !important;
+        width: auto !important;
+        min-width: 250px !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
     }
     
     /* ============================================ */
@@ -1924,27 +1950,42 @@ section {
         display: none !important;
     }
     
-    /* Hero slider - MORE SPACING */
+    /* FIXED: Hero slider - MORE SPACING FOR VERY SMALL SCREENS */
+    .hero-slider {
+        height: 80vh !important;
+        min-height: 450px !important;
+    }
+    
+    .slide-content {
+        padding: 25px 15px 100px !important;
+        padding-top: 30px !important;
+    }
+    
     .slide-content h1 {
         font-size: 24px !important;
-        padding: 0 !important;
         margin-bottom: 12px !important;
+        margin-top: 5px !important;
     }
     
     .slide-content p {
         margin-bottom: 20px !important;
         font-size: 15px !important;
+        line-height: 1.4 !important;
     }
     
-    /* FURTHER IMPROVED SLIDER DOTS SPACING */
+    /* FIXED: SLIDER DOTS SPACING - MORE SPACE FROM CONTENT */
     .slider-dots {
-        bottom: 45px !important; /* Even higher on very small screens */
+        bottom: 50px !important;
         gap: 10px !important;
     }
     
     .dot {
         width: 8px !important;
         height: 8px !important;
+    }
+    
+    .slide-buttons {
+        margin-bottom: 25px !important;
     }
     
     .section-header h2 {
