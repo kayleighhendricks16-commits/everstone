@@ -18,39 +18,74 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Popup Modal -->
-    <div id="popup-modal" class="popup-modal">
-        <div class="popup-content">
-            <button class="popup-close" id="popup-close">&times;</button>
-            
-            <div class="popup-header">
-                <div class="popup-badge">Special Offer</div>
-                <h3 class="popup-title">Get 10% Off Your First Project</h3>
-                <p class="popup-subtitle">Limited time offer for new clients. Submit your details to claim your discount.</p>
+   
+   
+<!-- Newsletter Popup Modal - CLEAN HORIZONTAL VERSION -->
+<div id="newsletter-popup" class="newsletter-popup">
+    <div class="newsletter-content">
+        <button class="newsletter-close" id="newsletter-close">&times;</button>
+        
+        <div class="newsletter-body">
+            <!-- Left Side - Logo & Branding -->
+            <div class="newsletter-logo-side">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Everstone Media Logo" class="popup-main-logo">
+                    <div class="popup-brand-name">
+                        <span class="popup-brand-everstone">Everstone</span>
+                        <span class="popup-brand-media">Media</span>
+                    </div>
+                    <div class="popup-badge">
+                        <span>Exclusive Access</span>
+                    </div>
+                </div>
             </div>
             
-            <form id="popup-form" class="popup-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number">
+           
+            
+            <!-- Right Side - Form -->
+            <div class="newsletter-form-side">
+                <div class="newsletter-header">
+                    <h2 class="newsletter-title">Join Our Digital Circle</h2>
+                    <p class="newsletter-subtitle">Get expert insights, exclusive sales, and digital marketing tips delivered to your inbox.</p>
                 </div>
                 
-                <button type="submit" class="popup-btn">
-                    <i class="fas fa-gift"></i> Claim My 10% Discount
-                </button>
-            </form>
-            
-            <div class="popup-footer">
-                <p><i class="fas fa-lock"></i> Your information is secure. We don't share your data.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="Your Full Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="marketing-optin" checked>
+                        <label for="marketing-optin">
+                            I want to receive exclusive sales, digital tips, and updates from Everstone Media
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="newsletter-btn">
+                        <i class="fas fa-paper-plane"></i> Join Now 
+                    </button>
+                </form>
+                
+                <div class="newsletter-footer">
+                    <p><i class="fas fa-lock"></i> We respect your privacy. Unsubscribe anytime.</p>
+                    <p class="small-text">By subscribing, you agree to our <a href="#">Privacy Policy</a></p>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
+    <!-- Rest of your HTML remains exactly the same -->
     <!-- Header -->
     <header class="site-header">
         <div class="container">
@@ -97,23 +132,23 @@
         </div>
     </header>
 
-    <!-- Hero Slider -->
+    <!-- Hero Slider - SWAPPED FIRST AND FOURTH SLIDES -->
     <section class="hero-slider">
         <div class="slides-container">
-            <!-- Slide 1: Web Design -->
-            <div class="slide active" style="background-image: url('hero1.jpg')">
+            <!-- Slide 1: All Services (NOW FIRST) -->
+            <div class="slide active" style="background-image: url('hero4.avif')">
                 <div class="slide-overlay"></div>
                 <div class="container">
                     <div class="slide-content">
-                        <span class="slide-badge">Premium Web Design</span>
-                        <h1>Stunning Websites That Convert Visitors</h1>
-                        <p>Professional website design that showcases your business and drives real results.</p>
+                        <span class="slide-badge">Complete Digital Solutions</span>
+                        <h1>Your Complete Digital Agency</h1>
+                        <p>Website design, branding, and social media - all under one roof.</p>
                         <div class="slide-buttons">
-                            <a href="portfolio.html#web-design" class="btn btn-primary btn-clickable">
-                                <i class="fas fa-laptop-code"></i> View Web Designs
+                            <a href="services.html" class="btn btn-primary btn-clickable">
+                                <i class="fas fa-layer-group"></i> All Services
                             </a>
                             <a href="contact.html" class="btn btn-secondary btn-clickable">
-                                <i class="fas fa-quote-left"></i> Get Website Quote
+                                <i class="fas fa-calendar-check"></i> Free Consultation
                             </a>
                         </div>
                     </div>
@@ -160,20 +195,20 @@
                 </div>
             </div>
             
-            <!-- Slide 4: All Services -->
-            <div class="slide" style="background-image: url('hero4.avif')">
+            <!-- Slide 4: Web Design (NOW FOURTH) -->
+            <div class="slide" style="background-image: url('hero1.jpg')">
                 <div class="slide-overlay"></div>
                 <div class="container">
                     <div class="slide-content">
-                        <span class="slide-badge">Complete Digital Solutions</span>
-                        <h1>Your Complete Digital Agency</h1>
-                        <p>Website design, branding, and social media - all under one roof.</p>
+                        <span class="slide-badge">Premium Web Design</span>
+                        <h1>Stunning Websites That Convert Visitors</h1>
+                        <p>Professional website design that showcases your business and drives real results.</p>
                         <div class="slide-buttons">
-                            <a href="services.html" class="btn btn-primary btn-clickable">
-                                <i class="fas fa-layer-group"></i> All Services
+                            <a href="portfolio.html#web-design" class="btn btn-primary btn-clickable">
+                                <i class="fas fa-laptop-code"></i> View Web Designs
                             </a>
                             <a href="contact.html" class="btn btn-secondary btn-clickable">
-                                <i class="fas fa-calendar-check"></i> Free Consultation
+                                <i class="fas fa-quote-left"></i> Get Website Quote
                             </a>
                         </div>
                     </div>
@@ -211,7 +246,7 @@
                 <!-- Web Design Project -->
                 <a href="portfolio.html#web-project1" class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" alt="Web Design Project">
+                        <img src="website.avif" alt="Web Design Project">
                         <div class="project-overlay">
                             <span class="project-category">Web Design</span>
                             <h3>Modern Business Website</h3>
@@ -223,7 +258,7 @@
                 <!-- Branding Project -->
                 <a href="portfolio.html#branding-project1" class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1567446537710-0e9b8d4d8c4d?auto=format&fit=crop&w=600&q=80" alt="Branding Project">
+                        <img src="branding.avif" alt="Branding Project">
                         <div class="project-overlay">
                             <span class="project-category">Branding</span>
                             <h3>Luxury Brand Identity</h3>
@@ -235,7 +270,7 @@
                 <!-- Social Media Project -->
                 <a href="portfolio.html#social-project1" class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=600&q=80" alt="Social Media Project">
+                        <img src="socialmedia.avif" alt="Social Media Project">
                         <div class="project-overlay">
                             <span class="project-category">Social Media</span>
                             <h3>Viral Campaign</h3>
@@ -484,7 +519,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button - FIXED POSITIONING -->
+    <!-- WhatsApp Button - FIXED POSITIONING - SHOWS ICON ONLY ON MOBILE -->
     <a href="https://wa.me/2766555444" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-text">Chat with us</span>
@@ -630,132 +665,172 @@
             });
         });
         
-        // Popup Modal Functionality
-        const popupModal = document.getElementById('popup-modal');
-        const popupClose = document.getElementById('popup-close');
-        const popupForm = document.getElementById('popup-form');
+        // ============================================
+        // NEWSLETTER POPUP FIXED JAVASCRIPT
+        // ============================================
+        
+        // Clear localStorage for testing (remove this in production)
+        localStorage.clear();
+        
+        const newsletterPopup = document.getElementById('newsletter-popup');
+        const newsletterClose = document.getElementById('newsletter-close');
+        const newsletterForm = document.getElementById('newsletter-form');
 
         // Show popup after 3 seconds
         setTimeout(() => {
-            // Check if user has already submitted or closed the popup
-            const hasSubmitted = localStorage.getItem('popupSubmitted');
-            const hasClosed = localStorage.getItem('popupClosed');
+            // For testing - always show popup
+            // const hasSubmitted = localStorage.getItem('newsletterSubmitted');
+            // const hasClosed = localStorage.getItem('newsletterClosed');
             
-            if (!hasSubmitted && !hasClosed) {
-                popupModal.classList.add('active');
+            // if (!hasSubmitted && !hasClosed) {
+                newsletterPopup.style.display = 'flex';
+                // Force reflow
+                newsletterPopup.offsetHeight;
+                newsletterPopup.classList.add('active');
                 document.body.style.overflow = 'hidden';
-            }
+            // }
         }, 3000);
 
         // Close popup
-        popupClose.addEventListener('click', () => {
-            popupModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            localStorage.setItem('popupClosed', 'true');
-            
-            // Remove popup after closing to prevent reopening
-            setTimeout(() => {
-                popupModal.style.display = 'none';
-            }, 300);
-        });
+        if (newsletterClose) {
+            newsletterClose.addEventListener('click', () => {
+                newsletterPopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                localStorage.setItem('newsletterClosed', 'true');
+                localStorage.setItem('newsletterCloseTime', new Date().getTime());
+                
+                // Hide after animation
+                setTimeout(() => {
+                    newsletterPopup.style.display = 'none';
+                }, 300);
+            });
+        }
 
         // Close popup when clicking outside
-        popupModal.addEventListener('click', (e) => {
-            if (e.target === popupModal) {
-                popupModal.classList.remove('active');
+        newsletterPopup.addEventListener('click', (e) => {
+            if (e.target === newsletterPopup) {
+                newsletterPopup.classList.remove('active');
                 document.body.style.overflow = 'auto';
-                localStorage.setItem('popupClosed', 'true');
+                localStorage.setItem('newsletterClosed', 'true');
+                localStorage.setItem('newsletterCloseTime', new Date().getTime());
                 
                 setTimeout(() => {
-                    popupModal.style.display = 'none';
+                    newsletterPopup.style.display = 'none';
                 }, 300);
             }
         });
 
-        // Handle popup form submission
-        popupForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = popupForm.querySelector('input[type="text"]').value;
-            const email = popupForm.querySelector('input[type="email"]').value;
-            const phone = popupForm.querySelector('input[type="tel"]').value;
-            
-            // Show loading state
-            const submitBtn = popupForm.querySelector('.popup-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call (replace with actual submission)
-            setTimeout(() => {
-                // Here you would send data to your server
-                console.log('Popup form submitted:', { name, email, phone });
+        // Handle newsletter form submission
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
                 
-                // Show success message
-                const popupHeader = document.querySelector('.popup-header');
-                popupHeader.innerHTML = `
-                    <div style="color: #10B981; font-size: 48px; margin-bottom: 20px;">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 class="popup-title">Thank You!</h3>
-                    <p class="popup-subtitle">Your 10% discount code has been sent to ${email}</p>
-                    <p style="color: #2563EB; font-weight: 600; margin-top: 10px;">DISCOUNT10</p>
-                `;
+                // Get form values
+                const name = newsletterForm.querySelector('input[type="text"]').value;
+                const email = newsletterForm.querySelector('input[type="email"]').value;
+                const optIn = newsletterForm.querySelector('#marketing-optin').checked;
                 
-                // Remove form
-                popupForm.style.display = 'none';
-                popupForm.reset();
+                // Show loading state
+                const submitBtn = newsletterForm.querySelector('.newsletter-btn');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+                submitBtn.disabled = true;
                 
-                // Save submission state
-                localStorage.setItem('popupSubmitted', 'true');
-                
-                // Close popup after 4 seconds
+                // Simulate API call
                 setTimeout(() => {
-                    popupModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
+                    console.log('Newsletter form submitted:', { name, email, optIn });
                     
-                    setTimeout(() => {
-                        popupModal.style.display = 'none';
-                    }, 300);
-                }, 4000);
-            }, 1500);
-        });
+                    // Show success message
+                    const formSide = document.querySelector('.newsletter-form-side');
+                    formSide.innerHTML = `
+                        <div class="success-message">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2 class="newsletter-title">Welcome to Our Circle!</h2>
+                            <p class="newsletter-subtitle">Thank you <strong>${name}</strong>! Your 10% discount code has been sent to ${email}</p>
+                            
+                            <div class="discount-code">
+                                <span class="code-label">Your Exclusive Code:</span>
+                                <div class="code">DIGITAL10</div>
+                                <p class="code-instruction">Use this code on your first project with us</p>
+                            </div>
+                            
+                            <div class="success-stats">
+                                <div class="success-stat">
+                                    <i class="fas fa-gift"></i>
+                                    <div>
+                                        <h4>First Newsletter</h4>
+                                        <p>Coming in 24 hours</p>
+                                    </div>
+                                </div>
+                                <div class="success-stat">
+                                    <i class="fas fa-star"></i>
+                                    <div>
+                                        <h4>Premium Content</h4>
+                                        <p>Weekly insights</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="newsletter-btn close-success" style="margin-top: 30px;">
+                                <i class="fas fa-check"></i> Awesome, Let's Continue
+                            </button>
+                        </div>
+                    `;
+                    
+                    // Add event listener to close button
+                    document.querySelector('.close-success').addEventListener('click', () => {
+                        newsletterPopup.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                        
+                        setTimeout(() => {
+                            newsletterPopup.style.display = 'none';
+                        }, 300);
+                    });
+                    
+                    // Save submission state
+                    localStorage.setItem('newsletterSubmitted', 'true');
+                    localStorage.setItem('newsletterSubmitTime', new Date().getTime());
+                }, 1500);
+            });
+        }
 
         // Escape key to close popup
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && popupModal.classList.contains('active')) {
-                popupModal.classList.remove('active');
+            if (e.key === 'Escape' && newsletterPopup.classList.contains('active')) {
+                newsletterPopup.classList.remove('active');
                 document.body.style.overflow = 'auto';
-                localStorage.setItem('popupClosed', 'true');
+                localStorage.setItem('newsletterClosed', 'true');
+                localStorage.setItem('newsletterCloseTime', new Date().getTime());
                 
                 setTimeout(() => {
-                    popupModal.style.display = 'none';
+                    newsletterPopup.style.display = 'none';
                 }, 300);
             }
         });
 
-        // Reset popup state after 24 hours (optional)
+        // Reset popup state after 7 days (optional)
         function resetPopupState() {
-            const lastClosed = localStorage.getItem('popupClosed');
-            const lastSubmitted = localStorage.getItem('popupSubmitted');
+            const lastClosed = localStorage.getItem('newsletterClosed');
+            const lastSubmitted = localStorage.getItem('newsletterSubmitted');
             
             if (lastClosed || lastSubmitted) {
                 const now = new Date().getTime();
-                const closeTime = parseInt(localStorage.getItem('popupCloseTime') || now);
-                const submitTime = parseInt(localStorage.getItem('popupSubmitTime') || now);
+                const closeTime = parseInt(localStorage.getItem('newsletterCloseTime') || now);
+                const submitTime = parseInt(localStorage.getItem('newsletterSubmitTime') || now);
                 
-                // 24 hours in milliseconds
-                const twentyFourHours = 24 * 60 * 60 * 1000;
+                // 7 days in milliseconds
+                const sevenDays = 7 * 24 * 60 * 60 * 1000;
                 
-                if (lastClosed && (now - closeTime) > twentyFourHours) {
-                    localStorage.removeItem('popupClosed');
-                    localStorage.removeItem('popupCloseTime');
+                if (lastClosed && (now - closeTime) > sevenDays) {
+                    localStorage.removeItem('newsletterClosed');
+                    localStorage.removeItem('newsletterCloseTime');
                 }
                 
-                if (lastSubmitted && (now - submitTime) > twentyFourHours) {
-                    localStorage.removeItem('popupSubmitted');
-                    localStorage.removeItem('popupSubmitTime');
+                if (lastSubmitted && (now - submitTime) > sevenDays) {
+                    localStorage.removeItem('newsletterSubmitted');
+                    localStorage.removeItem('newsletterSubmitTime');
                 }
             }
         }
@@ -765,6 +840,15 @@
         
         // Initialize first slide
         showSlide(0);
+        
+        // Test function to force show popup
+        window.showPopupNow = function() {
+            newsletterPopup.style.display = 'flex';
+            newsletterPopup.offsetHeight;
+            newsletterPopup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     </script>
 </body>
 </html>
+
