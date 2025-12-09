@@ -1215,25 +1215,29 @@ section {
     font-weight: 600;
 }
 
-/* Popup Modal Styles */
-.popup-modal {
+/* =========================================== */
+/* CLEAN NEWSLETTER POPUP - NO ICON, BIG LOGO */
+/* =========================================== */
+
+.newsletter-popup {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 15, 23, 0.95);
+    background: rgba(10, 15, 23, 0.97);
     backdrop-filter: blur(10px);
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s ease;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-.popup-modal.active {
+.newsletter-popup.active {
     display: flex;
     opacity: 1;
     animation: fadeIn 0.3s ease-out;
@@ -1244,26 +1248,33 @@ section {
     to { opacity: 1; }
 }
 
-.popup-content {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(10, 15, 23, 0.95) 100%);
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.newsletter-content {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(10, 15, 23, 0.98) 100%);
     border-radius: 20px;
-    padding: 40px;
-    max-width: 500px;
-    width: 100%;
+    max-width: 850px;
+    width: 95%;
+    max-height: 500px;
     position: relative;
     border: 1px solid rgba(37, 99, 235, 0.3);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     transform: translateY(20px);
     animation: slideUp 0.5s ease-out 0.1s forwards;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-@keyframes slideUp {
-    to {
-        transform: translateY(0);
-    }
-}
-
-.popup-close {
+.newsletter-close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -1277,84 +1288,214 @@ section {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 24px;
     transition: all 0.3s ease;
     z-index: 10;
+    line-height: 1;
+    padding: 0;
 }
 
-.popup-close:hover {
+.newsletter-close:hover {
     background: #2563EB;
     color: white;
     transform: rotate(90deg);
 }
 
-.popup-header {
-    text-align: center;
-    margin-bottom: 30px;
+.newsletter-body {
+    display: flex;
+    height: 100%;
+}
+
+/* Left Side - Logo & Branding */
+.newsletter-logo-side {
+    flex: 0 0 42%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(13, 148, 136, 0.15) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
     position: relative;
+    overflow: hidden;
+}
+
+.newsletter-logo-side::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+}
+
+.logo-container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.popup-main-logo {
+    width: 160px; /* Increased from 120px */
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Brand name under logo in popup */
+.popup-brand-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.popup-brand-everstone {
+    color: #2563EB;
+}
+
+.popup-brand-media {
+    color: #ffffff;
 }
 
 .popup-badge {
     display: inline-block;
     background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
     color: white;
-    padding: 8px 20px;
+    padding: 12px 30px;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-top: 25px;
     letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
-.popup-title {
+.popup-tagline {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.popup-tagline p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 500;
+    text-align: center;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Right Side - Form */
+.newsletter-form-side {
+    flex: 0 0 58%;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.newsletter-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.newsletter-title {
     font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 15px;
     color: #ffffff;
     line-height: 1.3;
 }
 
-.popup-subtitle {
+.newsletter-subtitle {
     color: #94A3B8;
     font-size: 16px;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-form {
     margin-bottom: 20px;
 }
 
-.popup-form {
+.newsletter-form .form-group {
     margin-bottom: 20px;
+    position: relative;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.newsletter-form .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748B;
+    font-size: 18px;
 }
 
-.form-group input {
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
     width: 100%;
-    padding: 16px 20px;
+    padding: 18px 20px 18px 50px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     color: #ffffff;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-.form-group input:focus {
+.newsletter-form input:focus {
     outline: none;
     border-color: #2563EB;
     background: rgba(37, 99, 235, 0.05);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-.form-group input::placeholder {
+.newsletter-form input::placeholder {
     color: #64748B;
 }
 
-.popup-btn {
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+    accent-color: #2563EB;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-group label {
+    color: #94A3B8;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+    flex: 1;
+}
+
+.newsletter-btn {
     width: 100%;
-    padding: 16px;
-    font-size: 16px;
+    padding: 18px;
+    font-size: 17px;
     font-weight: 600;
     background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
     color: white;
@@ -1365,25 +1506,470 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 25px;
 }
 
-.popup-btn:hover {
+.newsletter-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
 }
 
-.popup-footer {
+.newsletter-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.newsletter-footer {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #64748B;
     font-size: 14px;
+    margin-top: 20px;
 }
 
-.popup-footer i {
+.newsletter-footer i {
     color: #10B981;
     margin-right: 8px;
+}
+
+.newsletter-footer .small-text {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.newsletter-footer a {
+    color: #2563EB;
+    text-decoration: none;
+}
+
+.newsletter-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    font-size: 64px;
+    color: #10B981;
+    margin-bottom: 25px;
+    animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.discount-code {
+    background: rgba(37, 99, 235, 0.1);
+    border: 2px dashed #2563EB;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.code-label {
+    display: block;
+    color: #94A3B8;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.code {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2563EB;
+    letter-spacing: 3px;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-family: monospace;
+    border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+.code-instruction {
+    color: #94A3B8;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.success-stat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.success-stat i {
+    font-size: 24px;
+    color: #0D9488;
+    width: 40px;
+    height: 40px;
+    background: rgba(13, 148, 136, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-stat h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.success-stat p {
+    font-size: 13px;
+    color: #94A3B8;
+}
+
+/* =========================================== */
+/* MOBILE RESPONSIVE - OPTIMIZED FOR SMALL SCREENS */
+/* =========================================== */
+
+@media (max-width: 768px) {
+    /* Switch from horizontal to vertical layout on mobile */
+    .newsletter-body {
+        flex-direction: column;
+        height: auto;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    
+    .newsletter-content {
+        max-width: 95%;
+        width: 95%;
+        max-height: 85vh;
+        margin: 0 auto;
+    }
+    
+    .newsletter-logo-side {
+        flex: none;
+        padding: 30px 20px;
+        min-height: 180px;
+        max-height: 25vh;
+    }
+    
+    .popup-main-logo {
+        width: 100px; /* Slightly smaller on mobile but still prominent */
+        height: auto;
+        margin-bottom: 15px;
+    }
+    
+    /* Mobile adjustments for brand name in popup */
+    .popup-brand-name {
+        font-size: 24px;
+        margin-top: 8px;
+    }
+    
+    .popup-badge {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    
+    .popup-tagline {
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+    
+    .popup-tagline p {
+        font-size: 13px;
+        max-width: 250px;
+    }
+    
+    .newsletter-form-side {
+        flex: none;
+        padding: 30px 20px;
+        overflow-y: visible;
+    }
+    
+    .newsletter-title {
+        font-size: 24px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+    
+    .newsletter-form input[type="text"],
+    .newsletter-form input[type="email"] {
+        padding: 16px 20px 16px 50px;
+        font-size: 15px;
+    }
+    
+    .newsletter-btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    .checkbox-group label {
+        font-size: 13px;
+    }
+    
+    .newsletter-footer {
+        padding-top: 15px;
+        font-size: 13px;
+    }
+    
+    .newsletter-footer .small-text {
+        font-size: 11px;
+    }
+    
+    .success-message {
+        padding: 15px 0;
+    }
+    
+    .success-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    
+    .code {
+        font-size: 24px;
+        padding: 12px;
+        letter-spacing: 2px;
+    }
+    
+    .success-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-content {
+        max-width: 98%;
+        width: 98%;
+        border-radius: 15px;
+    }
+    
+    .newsletter-close {
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+    
+    .newsletter-logo-side {
+        padding: 25px 15px;
+        min-height: 160px;
+        max-height: 22vh;
+    }
+    
+    .popup-main-logo {
+        width: 90px;
+        margin-bottom: 12px;
+    }
+    
+    /* Mobile adjustments for brand name in popup */
+    .popup-brand-name {
+        font-size: 20px;
+        margin-top: 6px;
+    }
+    
+    .popup-badge {
+        padding: 7px 18px;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+    
+    .popup-tagline {
+        margin-top: 12px;
+    }
+    
+    .popup-tagline p {
+        font-size: 12px;
+        max-width: 220px;
+    }
+    
+    .newsletter-form-side {
+        padding: 25px 15px;
+    }
+    
+    .newsletter-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    
+    .newsletter-form .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .checkbox-group {
+        margin-top: 20px;
+    }
+    
+    .newsletter-btn {
+        margin-top: 20px;
+    }
+    
+    .newsletter-footer {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+    
+    .discount-code {
+        padding: 20px 15px;
+        margin: 20px 0;
+    }
+    
+    .code {
+        font-size: 20px;
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+/* For very small screens (iPhone SE, etc.) */
+@media (max-width: 360px) {
+    .newsletter-content {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+    
+    .newsletter-logo-side {
+        padding: 20px 15px;
+        min-height: 150px;
+        max-height: 20vh;
+    }
+    
+    .popup-main-logo {
+        width: 80px;
+    }
+    
+    /* Mobile adjustments for brand name in popup */
+    .popup-brand-name {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    
+    .newsletter-form-side {
+        padding: 20px 15px;
+    }
+    
+    .newsletter-title {
+        font-size: 20px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 13px;
+    }
+    
+    .newsletter-form input[type="text"],
+    .newsletter-form input[type="email"] {
+        padding: 14px 20px 14px 50px;
+        font-size: 14px;
+    }
+    
+    .checkbox-group label {
+        font-size: 12px;
+    }
+    
+    .newsletter-btn {
+        padding: 14px;
+        font-size: 15px;
+    }
+    
+    .newsletter-footer {
+        font-size: 12px;
+    }
+}
+
+/* Landscape mode for mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .newsletter-content {
+        max-height: 90vh;
+        max-width: 90%;
+    }
+    
+    .newsletter-body {
+        max-height: 80vh;
+    }
+    
+    .newsletter-logo-side {
+        min-height: 150px;
+        max-height: 30vh;
+    }
+    
+    /* Landscape adjustments for brand name in popup */
+    .popup-brand-name {
+        font-size: 20px;
+        margin-top: 8px;
+    }
+    
+    .popup-main-logo {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+    
+    .popup-badge {
+        padding: 6px 15px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .newsletter-form-side {
+        overflow-y: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Large mobile devices (tablets in portrait) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .newsletter-content {
+        max-width: 450px;
+    }
+    
+    .popup-main-logo {
+        width: 110px;
+    }
+    
+    /* Tablet adjustments for brand name in popup */
+    .popup-brand-name {
+        font-size: 26px;
+    }
+    
+    .newsletter-title {
+        font-size: 26px;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 16px;
+    }
 }
 
 /* =========================================== */
@@ -1880,14 +2466,6 @@ section {
         font-size: 14px !important;
         max-width: 100% !important;
     }
-    
-    .popup-content {
-        padding: 30px 20px !important;
-    }
-    
-    .popup-title {
-        font-size: 24px !important;
-    }
 }
 
 /* Small mobile devices */
@@ -2072,15 +2650,6 @@ section {
     .service-features li,
     .features li {
         gap: 8px !important;
-    }
-    
-    /* Popup */
-    .popup-content {
-        padding: 25px 15px !important;
-    }
-    
-    .popup-title {
-        font-size: 22px !important;
     }
     
     .popular-badge {
