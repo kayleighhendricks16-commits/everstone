@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everstone Media — Premium Web Design & Digital Branding Agency</title>
+    <meta name="description" content="South Africa's premier web design, branding, and social media agency.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <button class="popup-close" id="popup-close">&times;</button>
+            
+            <div class="popup-header">
+                <div class="popup-badge">Special Offer</div>
+                <h3 class="popup-title">Get 10% Off Your First Project</h3>
+                <p class="popup-subtitle">Limited time offer for new clients. Submit your details to claim your discount.</p>
+            </div>
+            
+            <form id="popup-form" class="popup-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                
+                <button type="submit" class="popup-btn">
+                    <i class="fas fa-gift"></i> Claim My 10% Discount
+                </button>
+            </form>
+            
+            <div class="popup-footer">
+                <p><i class="fas fa-lock"></i> Your information is secure. We don't share your data.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <a href="index.html" class="brand">
+                <img src="logo.png" alt="Everstone Media Logo" class="logo-img">
+                <span class="brand-text">Everstone <span class="brand-media">Media</span></span>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">
+                        <span class="nav-icon mobile-only"><i class="fas fa-home"></i></span>
+                        Home
+                    </a></li>
+                    <li><a href="services.html" class="nav-link">
+                        <span class="nav-icon mobile-only"><i class="fas fa-cogs"></i></span>
+                        Services
+                    </a></li>
+                    <li><a href="portfolio.html" class="nav-link">
+                        <span class="nav-icon mobile-only"><i class="fas fa-briefcase"></i></span>
+                        Portfolio
+                    </a></li>
+                    <li><a href="about.html" class="nav-link">
+                        <span class="nav-icon mobile-only"><i class="fas fa-info-circle"></i></span>
+                        About
+                    </a></li>
+                    <li><a href="contact.html" class="nav-link">
+                        <span class="nav-icon mobile-only"><i class="fas fa-envelope"></i></span>
+                        Contact
+                    </a></li>
+                    <li class="nav-btn-container">
+                        <a href="contact.html" class="nav-btn btn-primary">
+                            <i class="fas fa-rocket"></i> Start Your Project
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slides-container">
+            <!-- Slide 1: Web Design -->
+            <div class="slide active" style="background-image: url('hero1.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-badge">Premium Web Design</span>
+                        <h1>Stunning Websites That Convert Visitors</h1>
+                        <p>Professional website design that showcases your business and drives real results.</p>
+                        <div class="slide-buttons">
+                            <a href="portfolio.html#web-design" class="btn btn-primary btn-clickable">
+                                <i class="fas fa-laptop-code"></i> View Web Designs
+                            </a>
+                            <a href="contact.html" class="btn btn-secondary btn-clickable">
+                                <i class="fas fa-quote-left"></i> Get Website Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Branding -->
+            <div class="slide" style="background-image: url('hero2.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-badge">Professional Branding</span>
+                        <h1>Memorable Brands That Stand Out</h1>
+                        <p>Complete branding solutions that establish your business as a market leader.</p>
+                        <div class="slide-buttons">
+                            <a href="portfolio.html#branding" class="btn btn-primary btn-clickable">
+                                <i class="fas fa-palette"></i> View Branding Work
+                            </a>
+                            <a href="contact.html" class="btn btn-secondary btn-clickable">
+                                <i class="fas fa-star"></i> Branding Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3: Social Media -->
+            <div class="slide" style="background-image: url('hero3.avif')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-badge">Social Media Management</span>
+                        <h1>Engaging Content That Builds Community</h1>
+                        <p>Strategic social media management that drives meaningful engagement.</p>
+                        <div class="slide-buttons">
+                            <a href="portfolio.html#social-media" class="btn btn-primary btn-clickable">
+                                <i class="fas fa-share-alt"></i> See Social Campaigns
+                            </a>
+                            <a href="contact.html" class="btn btn-secondary btn-clickable">
+                                <i class="fas fa-chart-line"></i> Social Media Audit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4: All Services -->
+            <div class="slide" style="background-image: url('hero4.avif')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-badge">Complete Digital Solutions</span>
+                        <h1>Your Complete Digital Agency</h1>
+                        <p>Website design, branding, and social media - all under one roof.</p>
+                        <div class="slide-buttons">
+                            <a href="services.html" class="btn btn-primary btn-clickable">
+                                <i class="fas fa-layer-group"></i> All Services
+                            </a>
+                            <a href="contact.html" class="btn btn-secondary btn-clickable">
+                                <i class="fas fa-calendar-check"></i> Free Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <button class="slider-control prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-control next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Dots -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-badge">Featured Projects</span>
+                <h2>Our Latest Work</h2>
+                <p>See how we've transformed businesses with our premium digital solutions.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Web Design Project -->
+                <a href="portfolio.html#web-project1" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" alt="Web Design Project">
+                        <div class="project-overlay">
+                            <span class="project-category">Web Design</span>
+                            <h3>Modern Business Website</h3>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Branding Project -->
+                <a href="portfolio.html#branding-project1" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1567446537710-0e9b8d4d8c4d?auto=format&fit=crop&w=600&q=80" alt="Branding Project">
+                        <div class="project-overlay">
+                            <span class="project-category">Branding</span>
+                            <h3>Luxury Brand Identity</h3>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Social Media Project -->
+                <a href="portfolio.html#social-project1" class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=600&q=80" alt="Social Media Project">
+                        <div class="project-overlay">
+                            <span class="project-category">Social Media</span>
+                            <h3>Viral Campaign</h3>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <a href="portfolio.html" class="btn btn-outline btn-clickable">
+                    <i class="fas fa-images"></i> View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Best -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-badge">What We Do Best</span>
+                <h2>Our Core Services</h2>
+                <p>Three essential services to elevate your digital presence.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Web Design -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Design & Development</h3>
+                    <p>Professional, responsive websites that showcase your business and convert visitors into customers.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Fast Loading Speed</li>
+                        <li><i class="fas fa-check"></i> Mobile Optimization</li>
+                        <li><i class="fas fa-check"></i> User-Friendly Interface</li>
+                    </ul>
+                    <a href="services.html#web-design" class="service-link btn-clickable">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Branding -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete branding packages including logo design, color palette, typography, and brand guidelines.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Logo Design</li>
+                        <li><i class="fas fa-check"></i> Brand Guidelines</li>
+                        <li><i class="fas fa-check"></i> Color Palette</li>
+                        <li><i class="fas fa-check"></i> Typography System</li>
+                    </ul>
+                    <a href="services.html#branding" class="service-link btn-clickable">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Media Management</h3>
+                    <p>Strategic social media planning, content creation, and community management across all platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Content Creation</li>
+                        <li><i class="fas fa-check"></i> Community Management</li>
+                        <li><i class="fas fa-check"></i> Strategy Planning</li>
+                        <li><i class="fas fa-check"></i> Performance Analytics</li>
+                    </ul>
+                    <a href="services.html#social-media" class="service-link btn-clickable">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="services.html" class="btn btn-primary btn-clickable">
+                    <i class="fas fa-list"></i> View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-badge">Simple Pricing</span>
+                <h2>Choose Your Perfect Package</h2>
+                <p>Tailored packages for website design, branding, and social media.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Starter Package -->
+                <div class="price-card starter-card">
+                    <h3>Starter</h3>
+                    <div class="price">R799<span>/month</span></div>
+                    <p class="package-description">Perfect for new businesses establishing their online presence</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Professional 1-Page Website</li>
+                        <li><i class="fas fa-check"></i> Basic Brand Identity</li>
+                        <li><i class="fas fa-check"></i> 5 Social Media Posts/Month</li>
+                        <li><i class="fas fa-check"></i> Email Support (48h response)</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Implementation</li>
+                        <li><i class="fas fa-check"></i> Mobile-Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Google Analytics Setup</li>
+                    </ul>
+                    <a href="contact.html?package=starter" class="btn btn-outline btn-clickable">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Professional Package -->
+                <div class="price-card popular professional-card">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">R999<span>/month</span></div>
+                    <p class="package-description">Ideal for growing businesses wanting comprehensive digital solutions</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> 5-Page Custom Website</li>
+                        <li><i class="fas fa-check"></i> Complete Brand Package</li>
+                        <li><i class="fas fa-check"></i> 12 Social Media Posts/Month</li>
+                        <li><i class="fas fa-check"></i> Priority Support (24h response)</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO Strategy</li>
+                        <li><i class="fas fa-check"></i> Monthly Analytics Report</li>
+                        <li><i class="fas fa-check"></i> Content Creation</li>
+                        <li><i class="fas fa-check"></i> Social Media Management</li>
+                        <li><i class="fas fa-check"></i> Basic Email Marketing</li>
+                    </ul>
+                    <a href="contact.html?package=professional" class="btn btn-primary btn-clickable">
+                        Choose Plan
+                    </a>
+                </div>
+                
+                <!-- Enterprise Package -->
+                <div class="price-card enterprise-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">R1299<span>/month</span></div>
+                    <p class="package-description">Complete solution for established businesses wanting maximum growth</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Unlimited Page Website</li>
+                        <li><i class="fas fa-check"></i> Premium Brand Strategy</li>
+                        <li><i class="fas fa-check"></i> 30 Social Media Posts/Month</li>
+                        <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                        <li><i class="fas fa-check"></i> Comprehensive SEO Package</li>
+                        <li><i class="fas fa-check"></i> Weekly Analytics Reports</li>
+                        <li><i class="fas fa-check"></i> Advanced Content Creation</li>
+                        <li><i class="fas fa-check"></i> Full Social Media Management</li>
+                        <li><i class="fas fa-check"></i> Complete Email Marketing</li>
+                        <li><i class="fas fa-check"></i> Marketing Strategy Consultation</li>
+                        <li><i class="fas fa-check"></i> Conversion Rate Optimization</li>
+                        <li><i class="fas fa-check"></i> Monthly Strategy Sessions</li>
+                    </ul>
+                    <a href="contact.html?package=enterprise" class="btn btn-outline btn-clickable">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            
+            <div class="custom-package centered">
+                <h3>Need a Custom Solution?</h3>
+                <p>We offer custom packages tailored to your specific needs.</p>
+                <a href="contact.html" class="btn btn-secondary btn-clickable">
+                    <i class="fas fa-pen"></i> Request Custom Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content centered">
+                <h2>Ready to Elevate Your Digital Presence?</h2>
+                <p>Let's create a stunning website, memorable brand, and engaging social media together.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+2766555444" class="btn btn-secondary btn-large btn-clickable">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="Everstone Media Logo" class="footer-logo">
+                        <div class="footer-brand-text">
+                            <span class="brand-name">Everstone Media</span>
+                            <p class="brand-description">South Africa's premier digital agency specializing in website design, branding, and social media management.</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#web-design" class="btn-clickable"><i class="fas fa-laptop-code"></i> Website Design</a></li>
+                        <li><a href="services.html#branding" class="btn-clickable"><i class="fas fa-palette"></i> Branding</a></li>
+                        <li><a href="services.html#social-media" class="btn-clickable"><i class="fas fa-share-alt"></i> Social Media</a></li>
+                        <li><a href="services.html" class="btn-clickable"><i class="fas fa-layer-group"></i> All Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" class="btn-clickable"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="portfolio.html" class="btn-clickable"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                        <li><a href="about.html" class="btn-clickable"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="contact.html" class="btn-clickable"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</p>
+                        <p><i class="fas fa-phone"></i> +27 66 555 4444</p>
+                        <p><i class="fas fa-envelope"></i> hello@everstonemedia.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom centered">
+                <p>&copy; 2024 Everstone Media. All rights reserved. | <a href="privacy.html" class="btn-clickable">Privacy Policy</a> | <a href="terms.html" class="btn-clickable">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button - FIXED POSITIONING -->
+    <a href="https://wa.me/2766555444" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.querySelector('.nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Hero Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.slider-control.prev');
+        const nextBtn = document.querySelector('.slider-control.next');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+        
+        // Auto slide every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-slide on hover
+        const slider = document.querySelector('.hero-slider');
+        slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        slider.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Dot click events
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                showSlide(slideIndex);
+            });
+        });
+        
+        // Button events
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Remove hover effects for featured projects (text already visible)
+        document.querySelectorAll('.project-card').forEach(card => {
+            // Keep some hover effect for visual feedback but text remains visible
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('hover');
+            });
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('hover');
+            });
+        });
+        
+        // Service item animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Price card animation (desktop only)
+        document.querySelectorAll('.price-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                if (window.innerWidth > 768) { // Desktop only
+                    this.style.transform = 'translateY(-10px)';
+                }
+            });
+            card.addEventListener('mouseleave', function() {
+                if (window.innerWidth > 768) { // Desktop only
+                    this.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Popup Modal Functionality
+        const popupModal = document.getElementById('popup-modal');
+        const popupClose = document.getElementById('popup-close');
+        const popupForm = document.getElementById('popup-form');
+
+        // Show popup after 3 seconds
+        setTimeout(() => {
+            // Check if user has already submitted or closed the popup
+            const hasSubmitted = localStorage.getItem('popupSubmitted');
+            const hasClosed = localStorage.getItem('popupClosed');
+            
+            if (!hasSubmitted && !hasClosed) {
+                popupModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }, 3000);
+
+        // Close popup
+        popupClose.addEventListener('click', () => {
+            popupModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('popupClosed', 'true');
+            
+            // Remove popup after closing to prevent reopening
+            setTimeout(() => {
+                popupModal.style.display = 'none';
+            }, 300);
+        });
+
+        // Close popup when clicking outside
+        popupModal.addEventListener('click', (e) => {
+            if (e.target === popupModal) {
+                popupModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                localStorage.setItem('popupClosed', 'true');
+                
+                setTimeout(() => {
+                    popupModal.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        // Handle popup form submission
+        popupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = popupForm.querySelector('input[type="text"]').value;
+            const email = popupForm.querySelector('input[type="email"]').value;
+            const phone = popupForm.querySelector('input[type="tel"]').value;
+            
+            // Show loading state
+            const submitBtn = popupForm.querySelector('.popup-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call (replace with actual submission)
+            setTimeout(() => {
+                // Here you would send data to your server
+                console.log('Popup form submitted:', { name, email, phone });
+                
+                // Show success message
+                const popupHeader = document.querySelector('.popup-header');
+                popupHeader.innerHTML = `
+                    <div style="color: #10B981; font-size: 48px; margin-bottom: 20px;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="popup-title">Thank You!</h3>
+                    <p class="popup-subtitle">Your 10% discount code has been sent to ${email}</p>
+                    <p style="color: #2563EB; font-weight: 600; margin-top: 10px;">DISCOUNT10</p>
+                `;
+                
+                // Remove form
+                popupForm.style.display = 'none';
+                popupForm.reset();
+                
+                // Save submission state
+                localStorage.setItem('popupSubmitted', 'true');
+                
+                // Close popup after 4 seconds
+                setTimeout(() => {
+                    popupModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
+                    setTimeout(() => {
+                        popupModal.style.display = 'none';
+                    }, 300);
+                }, 4000);
+            }, 1500);
+        });
+
+        // Escape key to close popup
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popupModal.classList.contains('active')) {
+                popupModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                localStorage.setItem('popupClosed', 'true');
+                
+                setTimeout(() => {
+                    popupModal.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        // Reset popup state after 24 hours (optional)
+        function resetPopupState() {
+            const lastClosed = localStorage.getItem('popupClosed');
+            const lastSubmitted = localStorage.getItem('popupSubmitted');
+            
+            if (lastClosed || lastSubmitted) {
+                const now = new Date().getTime();
+                const closeTime = parseInt(localStorage.getItem('popupCloseTime') || now);
+                const submitTime = parseInt(localStorage.getItem('popupSubmitTime') || now);
+                
+                // 24 hours in milliseconds
+                const twentyFourHours = 24 * 60 * 60 * 1000;
+                
+                if (lastClosed && (now - closeTime) > twentyFourHours) {
+                    localStorage.removeItem('popupClosed');
+                    localStorage.removeItem('popupCloseTime');
+                }
+                
+                if (lastSubmitted && (now - submitTime) > twentyFourHours) {
+                    localStorage.removeItem('popupSubmitted');
+                    localStorage.removeItem('popupSubmitTime');
+                }
+            }
+        }
+
+        // Run reset check on page load
+        window.addEventListener('load', resetPopupState);
+        
+        // Initialize first slide
+        showSlide(0);
+    </script>
+</body>
+</html>
