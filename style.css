@@ -1348,6 +1348,7 @@ section {
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding: 20px 0; /* Added padding for better spacing */
 }
 
 .popup-main-logo {
@@ -1366,6 +1367,7 @@ section {
     line-height: 1;
     margin-top: 10px;
     text-align: center;
+    margin-bottom: 20px; /* Added margin for spacing */
 }
 
 .popup-brand-everstone {
@@ -1376,49 +1378,37 @@ section {
     color: #ffffff;
 }
 
-/* FIXED: New container for badge with proper mobile handling */
+/* FIXED: Improved container for badge with better spacing */
 .badge-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 15px;
+    padding: 10px 0;
 }
 
 .popup-badge {
     display: inline-block;
     background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
     color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
+    padding: 14px 35px; /* Increased padding */
+    border-radius: 30px; /* More rounded */
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
     text-align: center;
     white-space: nowrap;
     max-width: 90%;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
 }
 
 .popup-badge span {
     display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.popup-tagline {
-    margin-top: 20px;
-    padding: 0 20px;
-}
-
-.popup-tagline p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 15px;
-    line-height: 1.5;
-    font-weight: 500;
-    text-align: center;
-    max-width: 280px;
-    margin: 0 auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Right Side - Form */
@@ -1704,13 +1694,13 @@ section {
     
     .newsletter-logo-side {
         flex: none;
-        padding: 25px 20px;
-        min-height: 180px;
-        max-height: 25vh;
+        padding: 30px 20px 50px !important; /* More bottom padding for badge */
+        min-height: 200px;
+        max-height: 30vh;
     }
     
     .popup-main-logo {
-        width: 100px; /* Slightly smaller on mobile but still prominent */
+        width: 100px;
         height: auto;
         margin-bottom: 15px;
     }
@@ -1719,23 +1709,25 @@ section {
     .popup-brand-name {
         font-size: 24px;
         margin-top: 8px;
+        margin-bottom: 15px;
     }
     
-    /* FIXED: Exclusive Access badge for mobile - NO OVERLAPPING */
+    /* FIXED: Exclusive Access badge for mobile - BETTER SPACING */
     .badge-container {
-        margin-top: 15px;
+        margin-top: 10px;
+        padding: 0 15px;
         width: 100%;
-        padding: 0 10px;
     }
     
     .popup-badge {
-        padding: 8px 20px;
-        font-size: 14px;
-        white-space: normal;
+        padding: 12px 25px !important; /* More padding for mobile */
+        font-size: 14px !important;
+        white-space: nowrap;
         word-wrap: break-word;
         max-width: 100%;
         line-height: 1.3;
-        border-radius: 20px;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     }
     
     .popup-badge span {
@@ -1743,6 +1735,7 @@ section {
         word-break: keep-all;
         display: block;
         width: 100%;
+        letter-spacing: 0.3px;
     }
     
     .popup-tagline {
@@ -1814,6 +1807,30 @@ section {
         gap: 10px;
         margin: 20px 0;
     }
+    
+    /* WhatsApp button mobile - ICON ONLY */
+    .whatsapp-button {
+        bottom: 20px !important;
+        right: 20px !important;
+        padding: 15px !important;
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 9999 !important;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
+    }
+    
+    .whatsapp-button i {
+        font-size: 28px !important;
+        margin: 0 !important;
+    }
+    
+    .whatsapp-text {
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1832,9 +1849,9 @@ section {
     }
     
     .newsletter-logo-side {
-        padding: 20px 15px;
-        min-height: 160px;
-        max-height: 22vh;
+        padding: 25px 15px 45px !important; /* Even more bottom padding */
+        min-height: 180px;
+        max-height: 28vh;
     }
     
     .popup-main-logo {
@@ -1846,17 +1863,24 @@ section {
     .popup-brand-name {
         font-size: 20px;
         margin-top: 6px;
+        margin-bottom: 12px;
     }
     
     /* FIXED: Exclusive Access badge for very small screens */
     .badge-container {
-        margin-top: 12px;
+        margin-top: 8px;
+        padding: 0 10px;
     }
     
     .popup-badge {
-        padding: 7px 18px;
+        padding: 10px 20px !important;
+        font-size: 13px !important;
+        border-radius: 22px;
+        max-width: 95%;
+    }
+    
+    .popup-badge span {
         font-size: 13px;
-        border-radius: 18px;
     }
     
     .popup-tagline {
@@ -1910,6 +1934,30 @@ section {
         padding: 10px;
         letter-spacing: 1px;
     }
+    
+    /* WhatsApp button for small screens */
+    .whatsapp-button {
+        bottom: 20px !important;
+        right: 20px !important;
+        padding: 14px !important;
+        width: 56px !important;
+        height: 56px !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        border-radius: 50% !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .whatsapp-button i {
+        font-size: 26px !important;
+        margin: 0 !important;
+    }
+    
+    .whatsapp-text {
+        display: none !important;
+    }
 }
 
 /* For very small screens (iPhone SE, etc.) */
@@ -1922,34 +1970,48 @@ section {
     }
     
     .newsletter-logo-side {
-        padding: 20px 15px;
-        min-height: 150px;
-        max-height: 20vh;
+        padding: 20px 15px 40px !important;
+        min-height: 170px;
+        max-height: 25vh;
     }
     
     .popup-main-logo {
         width: 80px;
+        margin-bottom: 10px;
     }
     
     /* Mobile adjustments for brand name in popup */
     .popup-brand-name {
         font-size: 18px;
         margin-top: 5px;
+        margin-bottom: 10px;
     }
     
     /* FIXED: Exclusive Access badge for extra small screens */
     .badge-container {
-        margin-top: 10px;
+        margin-top: 5px;
+        padding: 0 8px;
     }
     
     .popup-badge {
-        padding: 6px 16px;
-        font-size: 12px;
-        border-radius: 16px;
+        padding: 8px 18px !important;
+        font-size: 12px !important;
+        border-radius: 20px;
+        max-width: 100%;
     }
     
     .popup-badge span {
         font-size: 12px;
+        letter-spacing: 0.2px;
+    }
+    
+    .popup-tagline {
+        margin-top: 10px;
+    }
+    
+    .popup-tagline p {
+        font-size: 11px;
+        max-width: 200px;
     }
     
     .newsletter-form-side {
@@ -1982,6 +2044,24 @@ section {
     .newsletter-footer {
         font-size: 12px;
     }
+    
+    /* WhatsApp button icon only */
+    .whatsapp-button {
+        padding: 12px !important;
+        width: 52px !important;
+        height: 52px !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .whatsapp-text {
+        display: none !important;
+    }
+    
+    .whatsapp-button i {
+        font-size: 24px !important;
+    }
 }
 
 /* Landscape mode for mobile */
@@ -1998,27 +2078,29 @@ section {
     .newsletter-logo-side {
         min-height: 150px;
         max-height: 30vh;
+        padding: 15px 15px 35px !important;
     }
     
     /* Landscape adjustments for brand name in popup */
     .popup-brand-name {
         font-size: 20px;
         margin-top: 8px;
+        margin-bottom: 8px;
     }
     
     .popup-main-logo {
         width: 80px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
     
     /* FIXED: Exclusive Access badge in landscape */
     .badge-container {
-        margin-top: 10px;
+        margin-top: 5px;
     }
     
     .popup-badge {
-        padding: 6px 15px;
-        font-size: 12px;
+        padding: 6px 15px !important;
+        font-size: 11px !important;
     }
     
     .newsletter-form-side {
@@ -2045,12 +2127,12 @@ section {
     
     /* FIXED: Exclusive Access badge for tablets */
     .badge-container {
-        margin-top: 20px;
+        margin-top: 15px;
     }
     
     .popup-badge {
-        padding: 10px 25px;
-        font-size: 15px;
+        padding: 13px 28px !important;
+        font-size: 15px !important;
     }
     
     .newsletter-title {
@@ -2211,30 +2293,6 @@ section {
         top: 50% !important;
         transform: translateY(-50%) !important;
         z-index: 2 !important;
-    }
-    
-    /* FIXED: WhatsApp button mobile - ICON ONLY (SMALLER) */
-    .whatsapp-button {
-        bottom: 20px !important;
-        right: 20px !important;
-        padding: 15px !important;
-        width: 60px !important;
-        height: 60px !important;
-        border-radius: 50% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        z-index: 9999 !important;
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
-    }
-    
-    .whatsapp-button i {
-        font-size: 28px !important;
-        margin: 0 !important;
-    }
-    
-    .whatsapp-text {
-        display: none !important;
     }
     
     /* FIXED: IMPROVED HERO SLIDER SPACING FOR MOBILE */
@@ -2611,30 +2669,6 @@ section {
         left: 15px !important;
     }
     
-    /* FIXED: WhatsApp button for small screens - ICON ONLY */
-    .whatsapp-button {
-        bottom: 20px !important;
-        right: 20px !important;
-        padding: 14px !important;
-        width: 56px !important;
-        height: 56px !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 50% !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-    
-    .whatsapp-button i {
-        font-size: 26px !important;
-        margin: 0 !important;
-    }
-    
-    .whatsapp-text {
-        display: none !important;
-    }
-    
     /* FIXED: Hero slider - MORE SPACING FOR VERY SMALL SCREENS */
     .hero-slider {
         height: 80vh !important;
@@ -2794,24 +2828,6 @@ section {
     .btn-clickable {
         font-size: 15px !important;
     }
-    
-    /* WhatsApp button icon only */
-    .whatsapp-button {
-        padding: 12px !important;
-        width: 52px !important;
-        height: 52px !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    .whatsapp-text {
-        display: none !important;
-    }
-    
-    .whatsapp-button i {
-        font-size: 24px !important;
-    }
 }
 
 /* Extra small devices - keep WhatsApp button as icon only */
@@ -2892,4 +2908,5 @@ section {
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         -webkit-tap-highlight-color: transparent;
     }
-    }
+        }
+
