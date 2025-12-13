@@ -11,6 +11,11 @@
 
 html {
     scroll-behavior: smooth;
+    /* FIXED: Prevent zooming and ensure fixed layout */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -20,6 +25,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    /* FIXED: Prevent unwanted zooming and overflow */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -1157,6 +1165,35 @@ section {
 }
 
 /* =========================================== */
+/* FIXED: MOBILE ZOOM PREVENTION - NEW RULES  */
+/* =========================================== */
+@media screen and (max-width: 768px) {
+    /* Prevent zoom on input focus */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+    
+    /* Prevent text size adjustment */
+    * {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Prevent tap highlight */
+    a, button, input, textarea, select {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* =========================================== */
 /* MOBILE RESPONSIVE - EXACT SAME AS HOME PAGE */
 /* =========================================== */
 
@@ -1226,6 +1263,23 @@ section {
 
 /* MOBILE FIX - Tablet and below */
 @media (max-width: 768px) {
+    /* FIXED: Prevent mobile zooming issues */
+    body {
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    input, textarea, select {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+        font-size: 16px !important; /* Prevents zoom on focus */
+    }
+    
     /* FIXED: Perfectly centered header with logo and Everstone Media */
     .site-header {
         padding: 15px 0 !important;
