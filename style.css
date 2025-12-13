@@ -7,6 +7,11 @@
 
 html {
     scroll-behavior: smooth;
+    /* FIXED: Prevent zooming and ensure fixed layout */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -16,6 +21,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    /* FIXED: Prevent unwanted zooming and overflow */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -1235,6 +1243,8 @@ section {
     transition: opacity 0.3s ease;
     padding: 20px;
     box-sizing: border-box;
+    /* FIXED: Prevent scrolling behind popup */
+    overflow: hidden;
 }
 
 .newsletter-popup.active {
@@ -1366,6 +1376,15 @@ section {
     color: #ffffff;
 }
 
+/* FIXED: New container for badge with proper mobile handling */
+.badge-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
 .popup-badge {
     display: inline-block;
     background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
@@ -1374,9 +1393,17 @@ section {
     border-radius: 25px;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 25px;
     letter-spacing: 0.5px;
     box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    text-align: center;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.popup-badge span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .popup-tagline {
@@ -1649,6 +1676,17 @@ section {
 /* =========================================== */
 
 @media (max-width: 768px) {
+    /* FIXED: Prevent zooming on mobile */
+    html, body {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
     /* Switch from horizontal to vertical layout on mobile */
     .newsletter-body {
         flex-direction: column;
@@ -1666,7 +1704,7 @@ section {
     
     .newsletter-logo-side {
         flex: none;
-        padding: 30px 20px;
+        padding: 25px 20px;
         min-height: 180px;
         max-height: 25vh;
     }
@@ -1683,10 +1721,28 @@ section {
         margin-top: 8px;
     }
     
+    /* FIXED: Exclusive Access badge for mobile - NO OVERLAPPING */
+    .badge-container {
+        margin-top: 15px;
+        width: 100%;
+        padding: 0 10px;
+    }
+    
     .popup-badge {
         padding: 8px 20px;
         font-size: 14px;
-        margin-top: 15px;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 100%;
+        line-height: 1.3;
+        border-radius: 20px;
+    }
+    
+    .popup-badge span {
+        white-space: normal;
+        word-break: keep-all;
+        display: block;
+        width: 100%;
     }
     
     .popup-tagline {
@@ -1717,7 +1773,7 @@ section {
     .newsletter-form input[type="text"],
     .newsletter-form input[type="email"] {
         padding: 16px 20px 16px 50px;
-        font-size: 15px;
+        font-size: 16px; /* Fixed size to prevent zoom */
     }
     
     .newsletter-btn {
@@ -1776,7 +1832,7 @@ section {
     }
     
     .newsletter-logo-side {
-        padding: 25px 15px;
+        padding: 20px 15px;
         min-height: 160px;
         max-height: 22vh;
     }
@@ -1792,10 +1848,15 @@ section {
         margin-top: 6px;
     }
     
+    /* FIXED: Exclusive Access badge for very small screens */
+    .badge-container {
+        margin-top: 12px;
+    }
+    
     .popup-badge {
         padding: 7px 18px;
         font-size: 13px;
-        margin-top: 12px;
+        border-radius: 18px;
     }
     
     .popup-tagline {
@@ -1876,6 +1937,21 @@ section {
         margin-top: 5px;
     }
     
+    /* FIXED: Exclusive Access badge for extra small screens */
+    .badge-container {
+        margin-top: 10px;
+    }
+    
+    .popup-badge {
+        padding: 6px 16px;
+        font-size: 12px;
+        border-radius: 16px;
+    }
+    
+    .popup-badge span {
+        font-size: 12px;
+    }
+    
     .newsletter-form-side {
         padding: 20px 15px;
     }
@@ -1891,7 +1967,7 @@ section {
     .newsletter-form input[type="text"],
     .newsletter-form input[type="email"] {
         padding: 14px 20px 14px 50px;
-        font-size: 14px;
+        font-size: 16px; /* Keep 16px to prevent zoom */
     }
     
     .checkbox-group label {
@@ -1935,10 +2011,14 @@ section {
         margin-bottom: 10px;
     }
     
+    /* FIXED: Exclusive Access badge in landscape */
+    .badge-container {
+        margin-top: 10px;
+    }
+    
     .popup-badge {
         padding: 6px 15px;
         font-size: 12px;
-        margin-top: 10px;
     }
     
     .newsletter-form-side {
@@ -1961,6 +2041,16 @@ section {
     /* Tablet adjustments for brand name in popup */
     .popup-brand-name {
         font-size: 26px;
+    }
+    
+    /* FIXED: Exclusive Access badge for tablets */
+    .badge-container {
+        margin-top: 20px;
+    }
+    
+    .popup-badge {
+        padding: 10px 25px;
+        font-size: 15px;
     }
     
     .newsletter-title {
@@ -2042,6 +2132,23 @@ section {
 
 /* MOBILE FIX - Tablet and below */
 @media (max-width: 768px) {
+    /* FIXED: Prevent mobile zooming issues */
+    body {
+        touch-action: pan-y;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    input, textarea, select {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+        font-size: 16px !important; /* Prevents zoom on focus */
+    }
+    
     /* FIXED: Perfectly centered header with logo and Everstone Media */
     .site-header {
         padding: 15px 0 !important;
@@ -2759,3 +2866,30 @@ section {
 ::-webkit-scrollbar-thumb:hover {
     background: #1D4ED8;
 }
+
+/* FIXED: Additional mobile zoom prevention */
+@media screen and (max-width: 768px) {
+    /* Prevent zoom on input focus */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+    
+    /* Prevent text size adjustment */
+    * {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Prevent tap highlight */
+    a, button, input, textarea, select {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+    }
+    }
