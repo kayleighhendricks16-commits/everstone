@@ -11,6 +11,11 @@
 
 html {
     scroll-behavior: smooth;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -20,6 +25,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    /* Prevent tap highlight */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -100,6 +108,8 @@ section {
     cursor: pointer;
     padding: 8px;
     z-index: 1001;
+    min-height: 44px; /* Minimum touch target */
+    min-width: 44px;
 }
 
 .hamburger span {
@@ -166,6 +176,7 @@ section {
     display: flex;
     align-items: center;
     gap: 0;
+    min-height: 44px; /* Minimum touch target */
 }
 
 /* Mobile-only icons (Hidden on Desktop) */
@@ -217,6 +228,7 @@ section {
     cursor: pointer;
     height: 50px;
     min-width: 180px;
+    min-height: 44px; /* Minimum touch target */
     background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
     color: white;
     white-space: nowrap;
@@ -344,9 +356,11 @@ section {
     text-align: center !important;
     min-width: 180px !important;
     height: 52px !important;
+    min-height: 44px !important; /* Minimum touch target */
     position: relative !important;
     z-index: 1000 !important;
     pointer-events: auto !important;
+    touch-action: manipulation !important; /* Prevent double-tap zoom */
 }
 
 .btn-clickable {
@@ -354,6 +368,7 @@ section {
     cursor: pointer !important;
     position: relative !important;
     z-index: 1000 !important;
+    touch-action: manipulation !important; /* Prevent double-tap zoom */
 }
 
 .btn i {
@@ -601,7 +616,7 @@ section {
     color: #CBD5E1;
 }
 
-/* Form Styles */
+/* Form Styles - FIXED FOR MOBILE ZOOM */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -627,6 +642,7 @@ section {
     display: block;
 }
 
+/* FIXED: Form inputs with proper font-size to prevent mobile zoom */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -636,11 +652,16 @@ section {
     border-radius: 10px;
     color: #ffffff;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 16px;
+    font-size: 16px !important; /* Minimum font size to prevent zoom */
     transition: all 0.3s ease;
     width: 100%;
+    min-height: 44px; /* Minimum touch target size */
+    -webkit-appearance: none; /* Remove default iOS styling */
+    -moz-appearance: none;
+    appearance: none;
 }
 
+/* FIXED: Focus states */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -648,15 +669,17 @@ section {
     border-color: #2563EB;
     background: rgba(37, 99, 235, 0.05);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    font-size: 16px !important; /* Keep font size consistent on focus */
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #64748B;
+    font-size: 16px; /* Placeholder font size */
+    opacity: 0.8;
 }
 
 .form-group select {
-    appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748B' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 20px center;
@@ -667,6 +690,7 @@ section {
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+    line-height: 1.5;
 }
 
 .checkbox-group {
@@ -679,10 +703,11 @@ section {
 .checkbox-group input[type="checkbox"] {
     margin-top: 4px;
     accent-color: #2563EB;
-    width: 18px;
-    height: 18px;
+    width: 20px; /* Slightly larger for mobile */
+    height: 20px;
     cursor: pointer;
     flex-shrink: 0;
+    min-height: 20px;
 }
 
 .checkbox-group label {
@@ -701,6 +726,7 @@ section {
     font-size: 17px;
     font-weight: 600;
     margin-top: 10px;
+    min-height: 50px; /* Larger touch target */
 }
 
 .form-note {
@@ -928,6 +954,7 @@ section {
     margin-top: auto;
     width: 100%;
     justify-content: center;
+    min-height: 44px; /* Minimum touch target */
 }
 
 /* FAQ SECTION */
@@ -976,6 +1003,7 @@ section {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    min-height: 44px; /* Minimum touch target */
 }
 
 .faq-question:hover {
@@ -1106,6 +1134,7 @@ section {
     align-items: center;
     gap: 12px;
     font-size: 15px;
+    min-height: 20px; /* Touch target */
 }
 
 .footer-col ul li a i {
@@ -1193,8 +1222,8 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px; /* Minimum touch target */
+    height: 44px;
     background: rgba(37, 99, 235, 0.1);
     color: #2563EB;
     border-radius: 50%;
@@ -1251,6 +1280,8 @@ section {
     visibility: visible !important;
     opacity: 1 !important;
     height: 64px;
+    min-height: 44px; /* Minimum touch target */
+    touch-action: manipulation; /* Prevent double-tap zoom */
 }
 
 .whatsapp-button:hover {
@@ -1354,6 +1385,33 @@ section {
 
 /* MOBILE FIX - Tablet and below */
 @media (max-width: 768px) {
+    /* FIXED: Prevent mobile zoom on form inputs */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    body {
+        touch-action: pan-y; /* Prevent pinch-to-zoom on body */
+    }
+    
+    /* FIXED: Form inputs with 16px font to prevent zoom */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 16px !important;
+        min-height: 44px !important;
+    }
+    
     /* FIXED: Perfectly centered header with logo and Everstone Media */
     .site-header {
         padding: 15px 0 !important;
@@ -1416,6 +1474,8 @@ section {
         top: 50% !important;
         transform: translateY(-50%) !important;
         z-index: 2 !important;
+        min-height: 44px !important;
+        min-width: 44px !important;
     }
     
     /* FIXED: WhatsApp button mobile - ICON ONLY (SMALLER) */
@@ -1431,6 +1491,8 @@ section {
         justify-content: center !important;
         z-index: 9999 !important;
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
+        min-height: 60px !important;
+        min-width: 60px !important;
     }
     
     .whatsapp-button i {
@@ -1493,6 +1555,7 @@ section {
         width: 100% !important;
         max-width: 300px !important;
         text-align: center !important;
+        min-height: 44px !important;
     }
     
     .cta-buttons {
@@ -1559,6 +1622,7 @@ section {
         width: 100% !important;
         font-size: 17px !important;
         gap: 15px !important;
+        min-height: 44px !important;
     }
     
     /* Show mobile-only icons */
@@ -1585,6 +1649,7 @@ section {
         font-size: 16px !important;
         margin: 0 auto !important;
         display: flex !important;
+        min-height: 56px !important;
     }
     
     /* Contact methods grid - FIXED CENTERING */
@@ -1697,6 +1762,8 @@ section {
         border-radius: 50% !important;
         justify-content: center !important;
         align-items: center !important;
+        min-height: 56px !important;
+        min-width: 56px !important;
     }
     
     .whatsapp-button i {
@@ -1745,6 +1812,7 @@ section {
         width: 100% !important;
         max-width: 280px !important;
         text-align: center !important;
+        min-height: 44px !important;
     }
     
     .contact-hero .slide-buttons {
@@ -1762,12 +1830,13 @@ section {
         padding: 25px 15px !important;
     }
     
-    /* Form adjustments */
+    /* Form adjustments - KEEP FONT SIZE 16px */
     .form-group input,
     .form-group select,
     .form-group textarea {
         padding: 14px 16px !important;
-        font-size: 15px !important;
+        font-size: 16px !important; /* IMPORTANT: Keep 16px to prevent zoom */
+        min-height: 44px !important;
     }
     
     /* FIXED: Price buttons for very small screens */
@@ -1864,6 +1933,8 @@ section {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        min-height: 52px !important;
+        min-width: 52px !important;
     }
     
     .whatsapp-text {
@@ -1893,6 +1964,8 @@ section {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        min-height: 50px !important;
+        min-width: 50px !important;
     }
     
     .whatsapp-text {
@@ -1906,5 +1979,14 @@ section {
     
     .btn, .btn-clickable {
         max-width: 240px !important;
+    }
+}
+
+/* FIXED: Additional mobile zoom prevention */
+@media (hover: none) and (pointer: coarse) {
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
     }
 }
